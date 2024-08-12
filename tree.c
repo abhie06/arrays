@@ -84,24 +84,28 @@ void insertVal(int *arr, int num, int n){
         printf("\n%d ",arr[i]);
     }
 }
-void freqElement(int *arr, int *num){
-    int count, track;
-    count =0;
-    track = 0;
+void freqElement(int *arr, int num){
+    int count;
+    count = -1;
+    int track= 0;
     for(int i=0;i<n;i++){
-        if(arr[i]== *num){
-            count++;
-            break;
+        count++;
+        if(arr[i]==num){
+        break;
         }
     }
     for(int i=count;i<n;i++){
-        for(int j=i+1;j<n;j++){
-            if(arr[count]==arr[j]){
-                track++;
+        track++;
+        for(int j = i+1;i<n;i++){
+            if(arr[i]==arr[j]){
+                break;
             }
         }
+
+
     }
-    printf("%d is repeated %d times", arr[count], track);
+    printf("%d is %d times", arr[count], track);
+
 }
 int main(){
     int arr[10];
@@ -116,5 +120,5 @@ int main(){
     // insertVal(arr, 10, n);
     printf("\nEnter the value of num:\n");
     scanf("%d",&num);
-    freqElement(arr, &num);
+    freqElement(arr, num);
 }
